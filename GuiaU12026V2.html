@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Guía Maestra Unidad 1 - Nivel Avanzado</title>
+    <style>
+        :root {
+            --corporate-blue: #0033A0;
+            --corporate-yellow: #fbcb05;
+            --light-bg: #f4f6f8;        
+            --card-bg: #ffffff;         
+            --text-dark: #1a1a1a;       
+            --text-blue: #0033A0;       
+            --border-color: rgba(0, 51, 160, 0.15);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: 'Inter', system-ui, sans-serif; 
+            background-color: var(--light-bg); 
+            color: var(--text-dark); 
+            line-height: 1.6;
+            overflow-y: auto; 
+        }
+
+        header { 
+            background-color: var(--corporate-yellow); 
+            padding: 15px 40px; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .header-text h1 { font-size: 1.6em; color: var(--corporate-blue); margin: 0; text-transform: uppercase; font-weight: 800; }
+        .header-text p { font-size: 0.95em; font-weight: 600; margin-top: 2px; color: #333; }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--corporate-blue);
+            font-weight: bold;
+            margin-left: 12px;
+            padding: 8px 15px;
+            border: 2px solid var(--corporate-blue);
+            border-radius: 5px;
+            background: white;
+            transition: 0.3s;
+            display: inline-block;
+            margin-top: 6px;
+        }
+        .nav-links a:hover { background: var(--corporate-blue); color: white; }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .intro-box {
+            background: var(--corporate-blue);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 20px rgba(0,51,160,0.15);
+        }
+        .intro-box h2 { color: var(--corporate-yellow); margin-bottom: 15px; font-size: 2em; }
+
+        .semana-header {
+            background: white;
+            color: var(--corporate-blue);
+            padding: 15px 20px;
+            border-left: 8px solid var(--corporate-yellow);
+            border-radius: 5px;
+            margin: 50px 0 20px 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            font-size: 1.8em;
+        }
+
+        .ejercicio-box { 
+            background: var(--card-bg); 
+            border: 1px solid var(--border-color); 
+            border-radius: 8px; 
+            padding: 25px; 
+            margin-bottom: 25px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02); 
+        }
+        .ejercicio-titulo { font-size: 1.3em; font-weight: bold; color: #d35400; margin-bottom: 10px; }
+        .ejercicio-desc { font-size: 1.1em; color: #333; margin-bottom: 20px; }
+
+        .tabs { display: flex; border-bottom: 2px solid var(--corporate-yellow); margin-bottom: 15px; flex-wrap: wrap; gap: 6px; }
+        .tab-btn { 
+            background: #f4f6f8; 
+            border: 1px solid #ccc; 
+            border-bottom: none; 
+            padding: 10px 20px; 
+            cursor: pointer; 
+            font-weight: 600; 
+            color: #555; 
+            margin-right: 5px; 
+            border-radius: 5px 5px 0 0; 
+            transition: 0.2s;
+        }
+        .tab-btn:hover { background: #e2e6ea; }
+        .tab-btn.active { background: var(--corporate-yellow); color: #000; border-color: var(--corporate-yellow); }
+        .tab-content { display: none; padding: 15px; font-size: 1.05em; color: #2c3e50; background: #fafbfc; border-radius: 0 0 5px 5px; border: 1px solid #eee; border-top: none;}
+        .tab-content ul { margin-left: 20px; margin-top: 10px; }
+        .tab-content li { margin-bottom: 6px; }
+
+        pre.code-box { 
+            background: #1e1e1e; 
+            color: #d4d4d4; 
+            padding: 20px; 
+            border-radius: 8px; 
+            font-family: 'Courier New', Courier, monospace; 
+            font-size: 1.05em; 
+            white-space: pre-wrap; 
+            line-height: 1.5; 
+            overflow-x: auto;
+            border-left: 5px solid var(--corporate-blue);
+        }
+
+        footer { 
+            background-color: var(--corporate-yellow); 
+            color: #000; 
+            text-align: center; 
+            padding: 20px; 
+            font-weight: 700; 
+            margin-top: 50px;
+        }
+        .footer-note { font-weight: 600; margin-top: 8px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-text">
+            <h1>GUÍA MAESTRA: PYTHON AVANZADO (UNIDAD 1)</h1>
+            <p>APLICACIONES COMPUTACIONALES EN INGENIERÍA | ESTÁNDARES TIC</p>
+        </div>
+        <div class="nav-links">
+            <a href="#integracion">Integración</a>
+            <a href="#seguridad">Seguridad TIC</a>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <div class="intro-box">
+            <h2>HACIA EL CÓDIGO PROFESIONAL</h2>
+            <p style="font-size: 1.2em;">Un ingeniero no asume que el usuario ingresará los datos correctamente. Diseña sistemas tolerantes a fallos.</p>
+            <ol style="text-align: left; max-width: 800px; margin: 20px auto; font-size: 1.1em;">
+                <li><strong>Entradas Dinámicas:</strong> Usaremos <code>input()</code> para pedir datos en tiempo real.</li>
+                <li><strong>Manejo de Errores:</strong> Implementaremos <code>try...except</code> para evitar que el programa colapse si el usuario ingresa texto en lugar de números.</li>
+                <li><strong>Estructura:</strong> Envolveremos el código en funciones <code>def main():</code> para acercarnos a la arquitectura modular (preámbulo a POO).</li>
+                <li><strong>Seguridad:</strong> Validaremos rangos lógicos y tipos de datos de forma rigurosa.</li>
+            </ol>
+        </div>
+
+        <h2 id="integracion" class="semana-header">NIVEL 1: Validación e Integración Cíclica</h2>
+
+        <div class="ejercicio-box">
+            <div class="ejercicio-titulo">Ejercicio 1: El Validador de Tipos Inquebrantable</div>
+            <p class="ejercicio-desc">Pide al usuario su edad. Si escribe letras (ej: "veinte"), el programa debe atrapar el error, no caerse, y volver a pedir el dato hasta que ingrese un número entero válido.</p>
+            <div class="tabs">
+                <button class="tab-btn active" onclick="openTab(event, 'ana')">Análisis</button>
+                <button class="tab-btn" onclick="openTab(event, 'raz')">Razonamiento</button>
+                <button class="tab-btn" onclick="openTab(event, 'com')">Comandos</button>
+                <button class="tab-btn" onclick="openTab(event, 'sol')">Solución</button>
+            </div>
+            <div class="tab-content ana" style="display:block;">
+                <p><strong>Problema:</strong> <code>int()</code> colapsa si le pasas letras. Esto es una vulnerabilidad básica.<br>
+                <strong>Solución:</strong> Un ciclo infinito controlado que solo se rompe si la conversión es exitosa.</p>
+            </div>
+            <div class="tab-content raz">
+                <ul>
+                    <li>Inicia un ciclo <code>while True:</code>.</li>
+                    <li>Intenta (<code>try</code>) pedir el dato y convertirlo a <code>int</code>.</li>
+                    <li>Si funciona, usa <code>break</code> para salir del ciclo.</li>
+                    <li>Si falla (<code>except ValueError</code>), muestra un mensaje de error amigable.</li>
+                </ul>
+            </div>
+            <div class="tab-content com">
+                <ul>
+                    <li><code>try:</code> Código que podría fallar.</li>
+                    <li><code>except ValueError:</code> Qué hacer si falla específicamente por un error de valor/tipo.</li>
+                </ul>
+            </div>
+            <div class="tab-content sol">
+<pre class="code-box"><code>def main():
+    # Infinite loop to enforce valid input
+    while True:
+        try:
+            # Attempt to get input and cast to integer
+            age = int(input("Ingrese su edad: "))
+            break # Exit loop if cast is successful
+        except ValueError:
+            # Catch the error to prevent application crash
+            print("Error TIC: Entrada inválida. Por favor ingrese un número entero.")
+            
+    print(f"Registro exitoso. Edad confirmada: {age}")
+
+# Execute the main function
+main()</code></pre>
+            </div>
+        </div>
+
+        <div class="ejercicio-box">
+            <div class="ejercicio-titulo">Ejercicio 2: Analizador de Textos (Casting Dinámico)</div>
+            <p class="ejercicio-desc">Pide una frase al usuario. Valida que no esté vacía ni que sean solo espacios. Luego, cuenta cuántas vocales tiene iterando sobre ella.</p>
+            <div class="tabs">
+                <button class="tab-btn active" onclick="openTab(event, 'ana')">Análisis</button><button class="tab-btn" onclick="openTab(event, 'raz')">Razonamiento</button><button class="tab-btn" onclick="openTab(event, 'com')">Comandos</button><button class="tab-btn" onclick="openTab(event, 'sol')">Solución</button>
+            </div>
+            <div class="tab-content ana" style="display:block;"><p>Los strings son colecciones. Debemos limpiar la entrada de espacios accidentales para no falsear datos y asegurar que el usuario escribió algo.</p></div>
+            <div class="tab-content raz"><ul><li>Usa un While para obligar el ingreso. El método <code>.strip()</code> limpia espacios. Si el largo es 0, vuelve a pedir.</li><li>Usa un FOR para recorrer letra por letra.</li><li>Usa el operador <code>in</code> para verificar si la letra es una vocal.</li></ul></div>
+            <div class="tab-content com"><ul><li><code>string.strip()</code>: Limpia bordes.</li><li><code>letra.lower() in "aeiou"</code>: Chequeo múltiple ultra rápido.</li></ul></div>
+            <div class="tab-content sol"><pre class="code-box"><code>def main():
+    # Require non-empty input
+    while True:
+        text = input("Ingrese una frase para analizar: ").strip()
+        if len(text) > 0:
+            break
+        print("Error: El texto no puede estar vacío.")
+
+    vowel_count = 0
+    # Iterate through each character in the string
+    for char in text:
+        # Check against a subset of characters safely
+        if char.lower() in "aeiouáéíóú":
+            vowel_count += 1
+            
+    print(f"Análisis completo: Se detectaron {vowel_count} vocales.")
+
+main()</code></pre></div>
+        </div>
+
+        <div class="ejercicio-box">
+            <div class="ejercicio-titulo">Ejercicio 3: Generador Seguro de Descuentos</div>
+            <p class="ejercicio-desc">Pide el monto de una compra (Float). Valida que sea estrictamente mayor a 0. Si es > 100000, aplica 15% descuento; si es > 50000, 5%; si no, 0%. Muestra el total final.</p>
+            <div class="tabs">
+                <button class="tab-btn active" onclick="openTab(event, 'ana')">Análisis</button><button class="tab-btn" onclick="openTab(event, 'raz')">Razonamiento</button><button class="tab-btn" onclick="openTab(event, 'com')">Comandos</button><button class="tab-btn" onclick="openTab(event, 'sol')">Solución</button>
+            </div>
+            <div class="tab-content ana" style="display:block;"><p>Mezclamos <code>try/except</code> (para evitar que escriban letras) con validación lógica (para evitar montos negativos o cero que no tienen sentido comercial).</p></div>
+            <div class="tab-content raz"><ul><li>El bloque Try maneja la arquitectura de software. Un IF interno maneja la lógica de negocio (valor > 0).</li><li>Luego, aplicamos ELIFs ordenados de mayor a menor para los tramos.</li></ul></div>
+            <div class="tab-content com"><ul><li>Uso combinado de jerarquía de <code>if</code> para evitar fallos lógicos.</li></ul></div>
+            <div class="tab-content sol"><pre class="code-box"><code>def main():
+    amount = 0.0
+    # Input validation phase
+    while True:
+        try:
+            amount = float(input("Ingrese el monto de la compra: $"))
+            if amount > 0:
+                break
+            else:
+                print("Lógica comercial: El monto debe ser mayor a cero.")
+        except ValueError:
+            print("Error TIC: Ingrese un formato numérico válido.")
+
+    # Business logic phase
+    discount = 0.0
+    if amount > 100000:
+        discount = amount * 0.15
+    elif amount > 50000:
+        discount = amount * 0.05
+
+    final_total = amount - discount
+    print(f"Total a pagar: ${final_total} (Descuento aplicado: ${discount})")
+
+main()</code></pre></div>
+        </div>
+
+        <div class="ejercicio-box">
+            <div class="ejercicio-titulo">Ejercicio 4: El Sistema de Alarmas (Filtro con Continue)</div>
+            <p class="ejercicio-desc">Simula el procesamiento de 10 sectores (1 al 10). Si el sector es múltiplo de 3, ignóralo (salta la iteración). Imprime los sectores procesados.</p>
+            <div class="tabs">
+                <button class="tab-btn active" onclick="openTab(event, 'ana')">Análisis</button><button class="tab-btn" onclick="openTab(event, 'raz')">Razonamiento</button><button class="tab-btn" onclick="openTab(event, 'com')">Comandos</button><button class="tab-btn" onclick="openTab(event, 'sol')">Solución</button>
+            </div>
+            <div class="tab-content ana" style="display:block;"><p>Optimización de recursos. Si un dato no nos sirve, no lo procesamos ni lo imprimimos, pasamos de inmediato al siguiente usando el operador Módulo para detectar múltiplos.</p></div>
+            <div class="tab-content raz"><ul><li>Ciclo For con Range(1, 11).</li><li>Condición: <code>if sector % 3 == 0: continue</code>.</li></ul></div>
+            <div class="tab-content com"><ul><li><code>%</code> (Módulo) combinado con <code>continue</code>.</li></ul></div>
+            <div class="tab-content sol"><pre class="code-box"><code>def main():
+    print("Iniciando escaneo de sectores...")
+    
+    # Iterate through sectors 1 to 10
+    for sector in range(1, 11):
+        # Skip processing if sector is a multiple of 3
+        if sector % 3 == 0:
+            print(f"Sector {sector} ignorado por mantención.")
+            continue
+            
+        print(f"Procesando datos seguros del sector {sector}...")
+
+main()</code></pre></div>
+        </div>
+
+        <div class="ejercicio-box">
+            <div class="ejercicio-titulo">Ejercicio 5: La Factorial (Acumulador Multiplicativo)</div>
+            <p class="ejercicio-desc">Pide un entero positivo seguro. Calcula su factorial (ej: 4! = 1 * 2 * 3 * 4). Usa un FOR para la matemática y manejo de errores para el input.</p>
+            <div class="tabs">
+                <button class="tab-btn active" onclick="openTab(event, 'ana')">Análisis</button><button class="tab-btn" onclick="openTab(event, 'raz')">Razonamiento</button><button class="tab-btn" onclick="openTab(event, 'com')">Comandos</button><button class="tab-btn" onclick="openTab(event, 'sol')">Solución</button>
+            </div>
+            <div class="tab-content ana" style="display:block;"><p>Un acumulador multiplicativo NO puede iniciar en 0, de lo contrario todo el resultado se anulará (x * 0 = 0). Debe iniciar en 1.</p></div>
+            <div class="tab-content raz"><ul><li>Valida el input para enteros positivos.</li><li>Inicia <code>resultado = 1</code>.</li><li>Ciclo for iterando desde 1 hasta N inclusive (<code>range(1, n+1)</code>).</li></ul></div>
+            <div class="tab-content com"><ul><li><code>range(1, n + 1)</code> para asegurar que el último número se multiplique.</li></ul></div>
+            <div class="tab-content sol"><pre class="code-box"><code>def main():
+    # Enforce positive integer input
+    while True:
+        try:
+            num = int(input("Ingrese un número entero positivo para el cálculo: "))
+            if num > 0:
+                break
+            print("El número debe ser mayor a cero.")
+        except ValueError:
+            print("Entrada inválida. Se requiere un entero.")
+
+    # Multiplicative accumulator starts at 1
+    factorial = 1
+    
+    # Calculate factorial
+    for i in range(1, num + 1):
+        factorial *= i
+        
+    print(f"El factorial de {num} es: {factorial}")
+
+main()</code></pre></div>
+        </div>
+
+        <h2 id="seguridad" class="semana-header">NIVEL 2: Sistemas y Seguridad TIC</h2>
+
+        <div class="ejercicio-box">
+            <div class="ejercicio-titulo">Ejercicio 6: Sistema ATM con Bloqueo de Seguridad</div>
+            <p class="ejercicio-desc">PIN correcto: "9999". El usuario tiene 3 intentos. Si ingresa texto, cuenta como intento fallido sin colapsar. Si falla 3 veces, bloquea la cuenta.</p>
+            <div class="tabs">
+                <button class="tab-btn active" onclick="openTab(event, 'ana')">Análisis</button><button class="tab-btn" onclick="openTab(event, 'raz')">Razonamiento</button><button class="tab-btn" onclick="openTab(event, 'com')">Comandos</button><button class="tab-btn" onclick="openTab(event, 'sol')">Solución</button>
+            </div>
+            <div class="tab-content ana" style="display:block;"><p>Sistema crítico. Usaremos manejo de excepciones en cada intento. Una bandera (flag) controlará si hubo éxito o se debe aplicar el protocolo de bloqueo.</p></div>
+            <div class="tab-content raz"><ul><li>Ciclo While basado en intentos.</li><li><code>try</code> para leer el PIN. Si es correcto, <code>break</code>. Si no, resta intento.</li><li>El <code>except</code> también debe restar un intento.</li></ul></div>
+            <div class="tab-content com"><ul><li>Integración profunda de While, Try/Except, If/Else y Flags.</li></ul></div>
+            <div class="tab-content sol"><pre class="code-box"><code>def main():
+    secret_pin = 9999
+    attempts_left = 3
+    is_locked = True
+
+    # Security protocol loop
+    while attempts_left > 0:
+        try:
+            user_pin = int(input(f"Ingrese su PIN ({attempts_left} intentos restantes): "))
+            
+            if user_pin == secret_pin:
+                print("Autenticación exitosa. Acceso concedido.")
+                is_locked = False
+                break
+            else:
+                print("PIN incorrecto.")
+                attempts_left -= 1
+                
+        except ValueError:
+            print("Alerta de Seguridad: Formato no válido registrado.")
+            attempts_left -= 1
+
+    # Final security check
+    if is_locked:
+        print("SISTEMA BLOQUEADO. Contacte al administrador TIC.")
+
+main()</code></pre></div>
+        </div>
+
+        <div class="ejercicio-box">
+            <div class="ejercicio-titulo">Ejercicio 7: Verificador de Contraseñas Fuertes</div>
+            <p class="ejercicio-desc">Pide una clave. Para ser segura debe: Tener más de 8 caracteres, contener al menos un número y contener al menos una letra. Muestra si es Segura o Débil.</p>
+            <div class="tabs">
+                <button class="tab-btn active" onclick="openTab(event, 'ana')">Análisis</button><button class="tab-btn" onclick="openTab(event, 'raz')">Razonamiento</button><button class="tab-btn" onclick="openTab(event, 'com')">Comandos</button><button class="tab-btn" onclick="openTab(event, 'sol')">Solución</button>
+            </div>
+            <div class="tab-content ana" style="display:block;"><p>Análisis de cadenas avanzado. Evaluaremos condiciones booleanas separadas iterando por cada caracter del string entregado por el usuario.</p></div>
+            <div class="tab-content raz"><ul><li>Tres banderas booleanas: <code>largo_ok</code>, <code>tiene_numero</code>, <code>tiene_letra</code>.</li><li>Ciclo FOR por la contraseña. Usa métodos de string para detectar números y letras.</li><li>Al final, un IF evalúa si las 3 banderas son verdaderas simultáneamente usando AND.</li></ul></div>
+            <div class="tab-content com"><ul><li><code>char.isdigit()</code>: Retorna True si es número.</li><li><code>char.isalpha()</code>: Retorna True si es letra.</li></ul></div>
+            <div class="tab-content sol"><pre class="code-box"><code>def main():
+    password = input("Ingrese una nueva contraseña: ")
+    
+    # Initialize validation flags
+    length_ok = len(password) > 8
+    has_number = False
+    has_letter = False
+    
+    # Scan characters for security requirements
+    for char in password:
+        if char.isdigit():
+            has_number = True
+        elif char.isalpha():
+            has_letter = True
+            
+    # Evaluate final security status using AND logic
+    if length_ok and has_number and has_letter:
+        print("Estado TIC: Contraseña Fuerte.")
+    else:
+        print("Estado TIC: Contraseña Débil. No cumple con las políticas de seguridad.")
+
+main()</code></pre></div>
+        </div>
+
+        <div class="ejercicio-box">
+            <div class="ejercicio-titulo">Ejercicio 8: Menú Interactivo (CLI Tool)</div>
+            <p class="ejercicio-desc">Crea un menú que se repita siempre hasta que el usuario digite '3'. Opción 1: Saludar. Opción 2: Mostrar versión. Opción 3: Salir. Valida entradas erróneas.</p>
+            <div class="tabs">
+                <button class="tab-btn active" onclick="openTab(event, 'ana')">Análisis</button><button class="tab-btn" onclick="openTab(event, 'raz')">Razonamiento</button><button class="tab-btn" onclick="openTab(event, 'com')">Comandos</button><button class="tab-btn" onclick="openTab(event, 'sol')">Solución</button>
+            </div>
+            <div class="tab-content ana" style="display:block;"><p>La base de cualquier software de consola o sistema en terminal. Un bucle infinito que controla el estado de la aplicación mediante ruteo con condicionales.</p></div>
+            <div class="tab-content raz"><ul><li>Imprime el menú dentro de un <code>while True</code>.</li><li>Pide la opción. Usa If/Elif para cada caso.</li><li>En el caso 3, usa <code>break</code> para apagar el sistema. Usa <code>else</code> para capturar opciones inexistentes (ej: 9).</li></ul></div>
+            <div class="tab-content com"><ul><li>No necesitas <code>try/except</code> si tratas la entrada como texto (string). Es más seguro y no requiere conversión para comparar menús.</li></ul></div>
+            <div class="tab-content sol"><pre class="code-box"><code>def main():
+    # Main application loop
+    while True:
+        print("\n--- MENÚ DEL SISTEMA ---")
+        print("1. Ejecutar Saludo")
+        print("2. Información del Sistema")
+        print("3. Salir")
+        
+        # Read as string to prevent casting errors
+        choice = input("Seleccione una opción: ").strip()
+        
+        # Route logic based on user selection
+        if choice == "1":
+            print(">> Hola, bienvenido al entorno de desarrollo.")
+        elif choice == "2":
+            print(">> Versión 1.0. Construcción Segura.")
+        elif choice == "3":
+            print(">> Apagando sistema...")
+            break # Exit the application
+        else:
+            print(">> Error: Opción no válida. Intente nuevamente.")
+
+main()</code></pre></div>
+        </div>
+
+        <div class="ejercicio-box">
+            <div class="ejercicio-titulo">Ejercicio 9: Auditoría de Notas de Alumnos</div>
+            <p class="ejercicio-desc">Pide al usuario cuántas notas desea auditar. Valida esa cantidad. Luego, usa un For para pedir cada nota validando que esté entre 1.0 y 7.0. Calcula el promedio.</p>
+            <div class="tabs">
+                <button class="tab-btn active" onclick="openTab(event, 'ana')">Análisis</button><button class="tab-btn" onclick="openTab(event, 'raz')">Razonamiento</button><button class="tab-btn" onclick="openTab(event, 'com')">Comandos</button><button class="tab-btn" onclick="openTab(event, 'sol')">Solución</button>
+            </div>
+            <div class="tab-content ana" style="display:block;"><p>Integración de doble validación: Primero cantidad (Entero positivo), luego datos iterativos (Flotantes en rango cerrado). Máxima robustez.</p></div>
+            <div class="tab-content raz"><ul><li>Primero aseguramos N. Luego iteramos N veces.</li><li>En cada iteración, otro While asegura que la nota sea float y esté en rango matemático.</li><li>Acumulador va sumando. Al final divide por N.</li></ul></div>
+            <div class="tab-content com"><ul><li>Anidación de validaciones. Arquitectura de defensa en profundidad.</li></ul></div>
+            <div class="tab-content sol"><pre class="code-box"><code>def main():
+    # Enforce valid number of iterations
+    while True:
+        try:
+            n_grades = int(input("¿Cuántas notas ingresará al sistema?: "))
+            if n_grades > 0:
+                break
+        except ValueError:
+            pass
+        print("Debe ingresar un número entero mayor a cero.")
+
+    total_sum = 0.0
+    
+    # Loop exactly n_grades times
+    for i in range(n_grades):
+        # Enforce valid grade constraints
+        while True:
+            try:
+                grade = float(input(f"Ingrese nota {i+1} (Rango 1.0 - 7.0): "))
+                if 1.0 <= grade <= 7.0:
+                    total_sum += grade
+                    break
+                else:
+                    print("Error: La nota está fuera del rango permitido.")
+            except ValueError:
+                print("Error: Formato decimal incorrecto. Use un punto.")
+
+    average = total_sum / n_grades
+    print(f"\nAuditoría Finalizada. Promedio del alumno: {round(average, 1)}")
+
+main()</code></pre></div>
+        </div>
+
+        <div class="ejercicio-box">
+            <div class="ejercicio-titulo">Ejercicio 10 (Desafío Final): La Máquina de Café Robusta</div>
+            <p class="ejercicio-desc">Café = $1200. El usuario inserta monedas. Valida que el monto ingresado sea un entero. Usa un bucle para sumar las monedas hasta que alcance o supere los $1200. Imprime el vuelto exacto a entregar.</p>
+            <div class="tabs">
+                <button class="tab-btn active" onclick="openTab(event, 'ana')">Análisis</button><button class="tab-btn" onclick="openTab(event, 'raz')">Razonamiento</button><button class="tab-btn" onclick="openTab(event, 'com')">Comandos</button><button class="tab-btn" onclick="openTab(event, 'sol')">Solución</button>
+            </div>
+            <div class="tab-content ana" style="display:block;"><p>Simulación de hardware. El programa no avanza (no entrega producto) hasta que el requerimiento de negocio (precio) se cumple. Tolerante a caídas por mala inserción.</p></div>
+            <div class="tab-content raz"><ul><li>Acumulador <code>saldo = 0</code>.</li><li><code>while saldo < 1200:</code> pide dinero, valídalo con try/except y súmalo.</li><li>Una vez que el ciclo termina (se cumplió la cuota), calcula el vuelto restando 1200 al saldo total.</li></ul></div>
+            <div class="tab-content com"><ul><li>Integración final de Variables, Acumuladores, While de Condición Comercial y Try/Except.</li></ul></div>
+            <div class="tab-content sol"><pre class="code-box"><code>def main():
+    coffee_price = 1200
+    current_balance = 0
+    
+    print(f"--- MÁQUINA DE CAFÉ --- Precio: ${coffee_price}")
+
+    # Transaction loop continues until fully funded
+    while current_balance < coffee_price:
+        missing = coffee_price - current_balance
+        print(f"Saldo actual: ${current_balance}. Faltan: ${missing}")
+        
+        try:
+            # Process incoming coin/bill
+            inserted = int(input("Inserte dinero: $"))
+            if inserted > 0:
+                current_balance += inserted
+            else:
+                print("Hardware error: Moneda no reconocida.")
+        except ValueError:
+            print("Hardware error: Sensor atascado, ingrese un número.")
+
+    # Transaction complete logic
+    change = current_balance - coffee_price
+    print("\n[+] Preparando su café...")
+    
+    if change > 0:
+        print(f"[+] Dispensando vuelto: ${change}")
+        
+    print("[+] Operación Finalizada con Éxito. Gracias por su compra.")
+
+main()</code></pre></div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>UNIVERSIDAD MAYOR | FACULTAD DE INGENIERÍA | APLICACIONES COMPUTACIONALES</p>
+        <p class="footer-note">Trabajo del Alumno: Modifica las funciones y altera los flujos lógicos para comprender el control de excepciones.</p>
+    </footer>
+
+    <script>
+        function openTab(evt, tabName) {
+            var container = evt.currentTarget.closest('.ejercicio-box');
+
+            var tabcontent = container.getElementsByClassName("tab-content");
+            for (var i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            var tablinks = container.getElementsByClassName("tab-btn");
+            for (var i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            container.querySelector("." + tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</body>
+</html>
