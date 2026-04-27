@@ -1,29 +1,19 @@
-# UMAYOR-INGT1001-Guia2
+# Índice de Ejercicios
 
-Repositorio con una segunda guía de ejercicios asociada a **INGT1001**, enfocada en actividades individuales en Python y acompañada por una guía HTML.
+Este archivo guía el recorrido por todos los ejercicios del proyecto.
 
-## Qué contiene
+## Nivel 1: Validación e Integración Cíclica
 
-- **GuiaU12026V2.html**: guía o material de apoyo en HTML.
-- **Exercise1.py** a **Exercise9.py**: scripts individuales de ejercicios.
-- **Exercise.10.py**: décimo ejercicio del conjunto.
+- `Part1/Exercise1.py` — Validador de tipos: edad con try/except y while True.
+- `Part1/Exercise2.py` — Analizador de textos: contar vocales con for e input.
+- `Part1/Exercise3.py` — Generador de descuentos: monto con validación y condicionales.
+- `Part1/Exercise4.py` — Sistema de alarmas: múltiplos de 3 con continue.
+- `Part1/Exercise5.py` — Factorial: acumulador multiplicativo con for.
 
-## Estructura del repositorio
+## Nivel 2: Sistemas y Seguridad TIC
 
-- `GuiaU12026V2.html`: documento principal para consultar la guía.
-- `Exercise1.py` ... `Exercise9.py`: resoluciones o ejemplos separados por ejercicio.
-- `Exercise.10.py`: actividad adicional o cierre de la guía.
-
-## Cómo revisar o ejecutar
-
-Para leer el contexto de la actividad, primero conviene abrir el archivo HTML en el navegador.
-
-Luego, cada ejercicio puede ejecutarse por separado con Python 3:
-
-```bash
-python3 Exercise1.py
-```
-
-## Observaciones
-
-El repositorio está organizado como colección de ejercicios independientes. No depende de una estructura compleja ni de paquetes externos visibles en la raíz.
+- `Part2/Exercise6.py` — Sistema ATM: PIN con intentos y bloqueo de seguridad.
+- `Part2/Exercise7.py` — Verificador de contraseñas: mínimo 8 caracteres, número y letra.
+- `Part2/Exercise8.py` — Menú interactivo: while True con opciones 1/2/3.
+- `Part2/Exercise9.py` — Auditoría de notas: promedio con validación de rango.
+- `Part2/Exercise10.py` — Máquina de café: vuelto con acumulador y try/except.
